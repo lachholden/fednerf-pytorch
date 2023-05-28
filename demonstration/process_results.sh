@@ -1,0 +1,5 @@
+#!/bin/bash
+python eval_nerf.py --config $1/config.yml --checkpoint $1/node_control/checkpoint$2.ckpt --checkpoint-type control --csvfile $1/node_control/testresults_checkpoint$2.csv --savedir $1/render/control
+python eval_nerf.py --config $1/config.yml --checkpoint $1/nodes_combined/checkpoint$2.ckpt --checkpoint-type federated --csvfile $1/nodes_combined/testresults_checkpoint$2.csv --savedir $1/render/federated
+python eval_nerf.py --config $1/config.yml --checkpoint $1/node_initial/checkpoint$2.ckpt --checkpoint-type initial --csvfile $1/node_initial/testresults_checkpoint$2.csv --savedir $1/render/initial
+python eval_nerf.py --config $1/config.yml --checkpoint $1/nodes_combined/checkpoint$3.ckpt --checkpoint-type federated_cumiter --csvfile $1/nodes_combined/testresults_checkpoint$3.csv --savedir $1/render/cumiter
